@@ -6,7 +6,7 @@ return [
     "method" => "GET",
     "slug" => $this->slug,
     "icon" => "icon-createtask",
-    "listorder" => 150,
+    "listorder" => 25,
     "menu_show" => 1,
     "remark" => "",
     "children" => [
