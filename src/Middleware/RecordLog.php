@@ -7,6 +7,7 @@ namespace Laket\Admin\OperationLog\Middleware;
 use Closure;
 use think\App;
 use think\helper\Arr;
+use think\helper\Str;
 use Laket\Admin\OperationLog\Model\OperationLog as OperationLogModel;
 
 /**
@@ -32,18 +33,23 @@ class RecordLog
     {
         $response = $next($request);
         
-        // 记录日志
-        $msg = request()->param();
+        $group = '/' . config('laket.route.group');
+        $url = request()->baseUrl();
         
-        // 过滤密码
-        Arr::forget($msg, [
-            'password',
-            'password_confirm',
-            'password2',
-            'password2_confirm',
-        ]);
-        
-        OperationLogModel::record(json_encode($msg), 1);
+        if (Str::startsWith($url, $group)) {
+            // 记录日志
+            $msg = request()->param();
+            
+            // 过滤密码
+            Arr::forget($msg, [
+                'password',
+                'password_confirm',
+                'password2',
+                'password2_confirm',
+            ]);
+            
+            OperationLogModel::record(json_encode($msg), 1);
+        }
         
         return $response;
     }
