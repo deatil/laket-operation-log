@@ -1,6 +1,6 @@
 {
     "name": "laket/laket-operation-log",
-    "description": "laket-admin 记录管理员在后台的操作记录。",
+    "description": "laket-admin 记录管理员在后台的操作记录",
     "keywords": [
         "laket",
         "operation-log",
