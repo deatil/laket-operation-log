@@ -4,7 +4,7 @@ declare (strict_types = 1);
 
 namespace Laket\Admin\OperationLog\Controller;
 
-use Laket\Admin\Controller\Base as BaseController;
+use Laket\Admin\Flash\Controller as BaseController;
 use Laket\Admin\OperationLog\Model\OperationLog as OperationLogModel;
 
 /**
