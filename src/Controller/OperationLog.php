@@ -20,37 +20,41 @@ class OperationLog extends BaseController
      */
     public function index()
     {
-        if ($this->request->isPost()) {
-            $limit = $this->request->param('limit/d', 20);
-            $page = $this->request->param('page/d', 1);
-            
-            $map = $this->buildparams();
-            
-            $method = $this->request->param('method/s', '');
-            if (!empty($method)) {
-                $map[] = ['method', '=', $method];
-            }
-            
-            $data = OperationLogModel::where($map)
-                ->page($page, $limit)
-                ->order('create_time desc')
-                ->select()
-                ->toArray();
-            
-            $total = OperationLogModel::where($map)
-                ->order('id DESC')
-                ->count();
-            
-            $result = [
-                "code" => 0, 
-                "count" => $total, 
-                "data" => $data,
-            ];
-            
-            return $this->json($result);
-        } else {
         return $this->fetch('laket-operation-log::index');
+    }
+    
+    /**
+     * 操作日志数据
+     */
+    public function indexData()
+    {
+        $limit = $this->request->param('limit/d', 20);
+        $page = $this->request->param('page/d', 1);
+        
+        $map = $this->buildparams();
+        
+        $method = $this->request->param('method/s', '');
+        if (!empty($method)) {
+            $map[] = ['method', '=', $method];
         }
+        
+        $data = OperationLogModel::where($map)
+            ->page($page, $limit)
+            ->order('create_time desc')
+            ->select()
+            ->toArray();
+        
+        $total = OperationLogModel::where($map)
+            ->order('id DESC')
+            ->count();
+        
+        $result = [
+            "code" => 0, 
+            "count" => $total, 
+            "data" => $data,
+        ];
+        
+        return $this->json($result);
     }
     
     /**

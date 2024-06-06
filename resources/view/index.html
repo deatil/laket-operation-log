@@ -91,8 +91,8 @@ layui.use(['table', 'laydate'], function() {
     table.render({
         elem: '#table',
         toolbar: '#toolbarLog',
-        url: '{:laket_route("admin.operation-log.index-post")}',
-        method: 'post', 
+        url: '{:laket_route("admin.operation-log.index-data")}',
+        method: 'get', 
         cols: [
             [
                 { field: 'admin_username', width: 100, title: '账号', align: "center" },

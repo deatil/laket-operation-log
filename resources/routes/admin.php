@@ -9,7 +9,7 @@ use Laket\Admin\Facade\Flash;
  */
 Flash::routes(function() {
     Route::get('operation-log/index', OperationLog::class . '@index')->name('admin.operation-log.index');
-    Route::post('operation-log/index', OperationLog::class . '@index')->name('admin.operation-log.index-post');
+    Route::get('operation-log/index-data', OperationLog::class . '@indexData')->name('admin.operation-log.index-data');
     Route::get('operation-log/view', OperationLog::class . '@view')->name('admin.operation-log.view');
-    Route::post('operation-log/clear', OperationLog::class . '@clear')->name('admin.operation-log.clear-post');
+    Route::post('operation-log/clear', OperationLog::class . '@clear')->name('admin.operation-log.clear');
 });
