@@ -33,9 +33,6 @@
                 <div class="layui-inline">
                     <a class="layui-btn lake-admin-search-btn" data-type="search">搜索</a>
                 </div>
-                <div class="layui-inline">
-                    <a class="layui-btn" href="{:laket_route('admin.operation-log.index')}">查看全部</a>
-                </div>
             </form>
         </blockquote>
         
@@ -49,7 +46,7 @@
     <div class="layui-btn-container">
         <button class="layui-btn layui-btn-sm layui-btn-danger ajax-post confirm" 
             data-post="{}" 
-            data-href="{:laket_route('admin.operation-log.clear-post')}">删除一个月前日志</button>
+            data-href="{:laket_route('admin.operation-log.clear')}">删除一个月前日志</button>
     </div>
 </script>
 
