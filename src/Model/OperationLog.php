@@ -6,7 +6,8 @@ namespace Laket\Admin\OperationLog\Model;
 
 use think\Model;
 
-use Laket\Admin\Facade\AuthData;
+use Laket\Admin\Facade\Admin;
+
 
 /**
  * 操作日志
@@ -41,7 +42,7 @@ class OperationLog extends Model
      */
     public static function record($message, $status = 0)
     {
-        $admin = AuthData::getInfo();
+        $admin = Admin::getData();
         if (! empty($admin)) {
             $adminId = $admin['id'];
             $adminUsername = $admin['name'];
