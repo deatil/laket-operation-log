@@ -64,7 +64,7 @@ class OperationLog extends BaseController
     {
         $id = $this->request->param('id');
         if (empty($id)) {
-            $this->error('信息ID错误！');
+            return $this->error('信息ID错误！');
         }
         
         $data = OperationLogModel::where([
@@ -72,7 +72,7 @@ class OperationLog extends BaseController
             ])
             ->find();
         if (empty($data)) {
-            $this->error('信息不存在！');
+            return $this->error('信息不存在！');
         }
         
         $this->assign("data", $data);
@@ -87,9 +87,9 @@ class OperationLog extends BaseController
     {
         $status = OperationLogModel::deleteAMonthago();
         if ($status === false) {
-            $this->error("删除日志失败！");
+            return $this->error("删除日志失败！");
         }
         
-        $this->success("删除日志成功！");
+        return $this->success("删除日志成功！");
     }
 }

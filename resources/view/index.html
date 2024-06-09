@@ -44,9 +44,14 @@
 {block name="script"}
 <script type="text/html" id="toolbarLog">
     <div class="layui-btn-container">
-        <button class="layui-btn layui-btn-sm layui-btn-danger ajax-post confirm" 
-            data-post="{}" 
-            data-href="{:laket_route('admin.operation-log.clear')}">删除一个月前日志</button>
+        {if laket_auth(['admin.operation-log.clear'])}
+            <button class="layui-btn layui-btn-sm layui-btn-danger ajax-post confirm" 
+                data-post="{}" 
+                data-href="{:laket_route('admin.operation-log.clear')}">删除一个月前日志</button>
+        {else}
+            <a href='javascript:;' class="layui-btn layui-btn-sm layui-btn-disabled">删除一个月前日志</a>
+        {/if}
+        
     </div>
 </script>
 
@@ -71,7 +76,12 @@
 </script>
 
 <script type="text/html" id="actionTpl">
-    <a href='{:laket_route("admin.operation-log.view")}?id={{ d.id }}' class="layui-btn layui-btn-xs layui-iframe" title="日志详情">详情</a>
+    {if laket_auth(['admin.operation-log.view'])}
+        <a href='{:laket_route("admin.operation-log.view")}?id={{ d.id }}' class="layui-btn layui-btn-xs layui-iframe" title="日志详情">详情</a>
+    {else}
+        <a href='javascript:;' class="layui-btn layui-btn-xs layui-btn-disabled">详情</a>
+    {/if}
+        
 </script>
 
 <script>

@@ -2,7 +2,7 @@
 
 return [
     "title" => "操作日志",
-    "url" => "admin/operation-log/index",
+    "url" => "operation-log/index",
     "method" => "GET",
     "slug" => $this->slug,
     "icon" => "icon-createtask",
@@ -12,7 +12,7 @@ return [
     "children" => [
         [
             "title" => "操作日志",
-            "url" => "admin/operation-log/index",
+            "url" => "operation-log/index",
             "method" => "GET",
             "slug" => "admin.operation-log.index",
             "icon" => "icon-neirongguanli",
@@ -21,7 +21,7 @@ return [
             "children" => [
                 [
                     "title" => "操作日志",
-                    "url" => "admin/operation-log/index",
+                    "url" => "operation-log/index",
                     "method" => "GET",
                     "slug" => "admin.operation-log.index",
                     "menu_show" => 0,
@@ -29,7 +29,7 @@ return [
                 ],
                 [
                     "title" => "操作日志数据",
-                    "url" => "admin/operation-log/index-data",
+                    "url" => "operation-log/index-data",
                     "method" => "GET",
                     "slug" => "admin.operation-log.index-data",
                     "menu_show" => 0,
@@ -37,7 +37,7 @@ return [
                 ],
                 [
                     "title" => "日志详情",
-                    "url" => "admin/operation-log/view",
+                    "url" => "operation-log/view",
                     "method" => "GET",
                     "slug" => "admin.operation-log.view",
                     "menu_show" => 0,
@@ -45,7 +45,7 @@ return [
                 ],
                 [
                     "title" => "清除日志",
-                    "url" => "admin/operation-log/clear",
+                    "url" => "operation-log/clear",
                     "method" => "POST",
                     "slug" => "admin.operation-log.clear",
                     "menu_show" => 0,
