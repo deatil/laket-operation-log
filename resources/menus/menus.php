@@ -4,7 +4,7 @@ return [
     "title" => "操作日志",
     "url" => "operation-log/index",
     "method" => "GET",
-    "slug" => $this->slug,
+    "slug" => $slug,
     "icon" => "icon-createtask",
     "listorder" => 1025,
     "menu_show" => 1,
