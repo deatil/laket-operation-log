@@ -25,7 +25,7 @@ return [
                     "method" => "GET",
                     "slug" => "admin.operation-log.index",
                     "menu_show" => 0,
-                    "listorder" => 5,
+                    "listorder" => 15,
                 ],
                 [
                     "title" => "操作日志数据",
@@ -33,7 +33,7 @@ return [
                     "method" => "GET",
                     "slug" => "admin.operation-log.index-data",
                     "menu_show" => 0,
-                    "listorder" => 10,
+                    "listorder" => 14,
                 ],
                 [
                     "title" => "日志详情",
@@ -41,7 +41,7 @@ return [
                     "method" => "GET",
                     "slug" => "admin.operation-log.view",
                     "menu_show" => 0,
-                    "listorder" => 15,
+                    "listorder" => 13,
                 ],
                 [
                     "title" => "清除日志",
@@ -49,7 +49,7 @@ return [
                     "method" => "POST",
                     "slug" => "admin.operation-log.clear",
                     "menu_show" => 0,
-                    "listorder" => 20,
+                    "listorder" => 12,
                 ],
             ],
         ],
