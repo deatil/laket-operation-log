@@ -29,7 +29,7 @@
     },
     "laket" : {
         "title": "操作日志",
-        "version": "1.2.6",
+        "version": "1.2.7",
         "adaptation": "1.2.*"
     },
     "extra": {
